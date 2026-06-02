@@ -60,6 +60,6 @@ Similar al de los barriles, pero configurado para patrullaje de largo alcance.
 
 ## 🚀 Instalación y Uso
 1. Instala Webots.
-2. Clona este repositorio: `git clone <URL_DE_TU_REPO>`
+2. Clona este repositorio: `git clone https://github.com/BRAYANGRANADOS/Robot_Webots.git`
 3. Abre el archivo `worlds/tarea2robot.wbt`.
 4. Haz clic en el botón de "Reproducir" en la parte superior de Webots.
