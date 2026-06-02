@@ -1,0 +1,5 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.tarea2robot.jpg
+.tarea2robot.wbproj

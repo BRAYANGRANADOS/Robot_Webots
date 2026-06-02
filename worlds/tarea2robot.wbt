@@ -1,0 +1,298 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+
+WorldInfo {
+  basicTimeStep 16
+}
+DEF VIEWPOINT Viewpoint {
+  orientation -0.45885986600721707 0.4367312903610728 0.7737657290080708 1.508556384833407
+  position -0.24722350756431727 -3.8149476241271576 6.28327349416468
+}
+Background {
+  skyColor [
+    0.4 0.7 1
+  ]
+}
+DirectionalLight {
+  ambientIntensity 1
+  direction -1 -1 -1
+}
+Solid {
+  translation 0 0 -0.01
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.8 0.8 0.8
+        roughness 1
+        metalness 0
+      }
+      geometry Plane {
+        size 2 2
+      }
+    }
+  ]
+  name "ground"
+  boundingObject Plane {
+    size 2 2
+  }
+}
+Solid {
+  translation 0 1 0.1
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.5 0.5 0.5
+      }
+      geometry Box {
+        size 2 0.05 0.2
+      }
+    }
+  ]
+  name "outer_wall_n"
+  boundingObject Box {
+    size 2 0.05 0.2
+  }
+}
+Solid {
+  translation 0 -1 0.1
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.5 0.5 0.5
+      }
+      geometry Box {
+        size 2 0.05 0.2
+      }
+    }
+  ]
+  name "outer_wall_s"
+  boundingObject Box {
+    size 2 0.05 0.2
+  }
+}
+Solid {
+  translation 1 0 0.1
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.5 0.5 0.5
+      }
+      geometry Box {
+        size 0.05 2 0.2
+      }
+    }
+  ]
+  name "outer_wall_e"
+  boundingObject Box {
+    size 0.05 2 0.2
+  }
+}
+Solid {
+  translation -1 0 0.1
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.5 0.5 0.5
+      }
+      geometry Box {
+        size 0.05 2 0.2
+      }
+    }
+  ]
+  name "outer_wall_w"
+  boundingObject Box {
+    size 0.05 2 0.2
+  }
+}
+Solid {
+  translation -0.5 -0.3 0.1
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.3 0.3 0.7
+      }
+      geometry Box {
+        size 0.05 1.4 0.2
+      }
+    }
+  ]
+  name "wall_v1"
+  boundingObject Box {
+    size 0.05 1.4 0.2
+  }
+}
+Solid {
+  translation 0 0.3 0.1
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.3 0.3 0.7
+      }
+      geometry Box {
+        size 0.05 1.4 0.2
+      }
+    }
+  ]
+  name "wall_v2"
+  boundingObject Box {
+    size 0.05 1.4 0.2
+  }
+}
+Solid {
+  translation 0.5 -0.3 0.1
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.3 0.3 0.7
+      }
+      geometry Box {
+        size 0.05 1.4 0.2
+      }
+    }
+  ]
+  name "wall_v3"
+  boundingObject Box {
+    size 0.05 1.4 0.2
+  }
+}
+Solid {
+  translation -0.75 0.2 0.1
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.3 0.3 0.7
+      }
+      geometry Box {
+        size 0.3 0.05 0.2
+      }
+    }
+  ]
+  name "obs_1"
+  boundingObject Box {
+    size 0.3 0.05 0.2
+  }
+}
+Solid {
+  translation -0.25 -0.4 0.1
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.3 0.3 0.7
+      }
+      geometry Box {
+        size 0.3 0.05 0.2
+      }
+    }
+  ]
+  name "obs_2"
+  boundingObject Box {
+    size 0.3 0.05 0.2
+  }
+}
+Robot {
+  translation -0.25 0 0.05
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0.5 1
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "npc_robot"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+  physics Physics {
+    density -1
+    mass 1
+  }
+  controller "npc_controller"
+  supervisor TRUE
+}
+Robot {
+  translation 0.25 -0.3 0.05
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0.5 0
+      }
+      geometry Cylinder {
+        height 0.1
+        radius 0.05
+      }
+    }
+  ]
+  name "barrel_1"
+  boundingObject Cylinder {
+    height 0.1
+    radius 0.05
+  }
+  physics Physics {
+    density -1
+    mass 1
+  }
+  controller "barrel_controller"
+  supervisor TRUE
+}
+Robot {
+  translation 0.25 0.3 0.05
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0.5 0
+      }
+      geometry Cylinder {
+        height 0.1
+        radius 0.05
+      }
+    }
+  ]
+  name "barrel_2"
+  boundingObject Cylinder {
+    height 0.1
+    radius 0.05
+  }
+  physics Physics {
+    density -1
+    mass 1
+  }
+  controller "barrel_controller"
+  supervisor TRUE
+}
+Solid {
+  translation 0.8 0.8 0.05
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        roughness 1
+        metalness 0
+      }
+      geometry Cylinder {
+        height 0.1
+        radius 0.1
+      }
+    }
+    PointLight {
+      attenuation 0 0 1
+      color 1 0 0
+      intensity 15
+      location 0 0 0.1
+      castShadows TRUE
+    }
+  ]
+  name "goal"
+}
+DEF E-PUCK E-puck {
+  translation -0.8 -0.8 0.01
+  rotation 0 0 1 1.57
+  name "E-puck"
+  controller "epuck_controller"
+  supervisor TRUE
+}
